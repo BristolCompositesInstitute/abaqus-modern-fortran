@@ -18,7 +18,8 @@ module Abaqus_Definitions
 
 !DIR$ NOFREEFORM
 !DIR$ FIXEDFORMLINESIZE:132
-      include "aba_param.inc"
+      include "aba_param.inc"      ! Abaqus/Standard
+!     include "vaba_param.inc"     ! Abaqus/Explicit
 !DIR$ FREEFORM
 
   private
