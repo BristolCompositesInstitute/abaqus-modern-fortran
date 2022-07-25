@@ -1,0 +1,24 @@
+# Abaci config file
+
+# Name of output directory
+output = "scratch"
+
+# Path to user subroutine file
+#  (relative to this config file)
+user-sub-file = "src/umat.f"
+
+
+# ------------ Compile settings ------------
+[compile]
+include = "src/*.f90"    # extra source files to include
+
+
+# ------------ Example job ------------
+[[job]]
+name = "test-job"
+job-file = "jobs/single-element.inp"
+tags = ['default','test']
+
+check.reference = 'jobs/test-job-results.pkl'
+check.steps = ['Step-1']
+check.fields = ['AC YIELD', 'E', 'PE', 'PEEQ', 'PEMAG', 'RF', 'S', 'U']
