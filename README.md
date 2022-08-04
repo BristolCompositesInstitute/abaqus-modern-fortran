@@ -37,7 +37,8 @@ You will need Abaqus and the Intel Fortran compiler installed on your system to 
 abaqus job=single-element user=../src/umat.f interactive
 ```
 
-If you have the Abaci test runner installed, then simply navigate to the root of this repository and run the following command:
+If you have the [Abaci](https://github.com/BristolCompositesInstitute/abaci) test runner installed,
+then simply navigate to the root of this repository and run the following command:
 
 ```shell
 abaci run
