@@ -1,0 +1,11 @@
+image: bci-abaqus-runner
+stages:
+  - test
+
+test:
+  stage: test
+  tags:
+    - linux
+  script:
+    abaci run -vs
+
