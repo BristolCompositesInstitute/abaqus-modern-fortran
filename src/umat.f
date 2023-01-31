@@ -41,6 +41,3 @@ subroutine umat(stress,statev,ddsdde,sse,spd,scd, &
   end if
   
 end subroutine umat
-
-!DIR$ NOFREEFORM
-!DIR$ FIXEDFORMLINESIZE:132
