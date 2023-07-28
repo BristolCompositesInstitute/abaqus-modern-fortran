@@ -19,6 +19,7 @@ __This sample code follows the [BCI Fortran Coding Guidelines](https://bristolco
 - `src/Elastic_mod.f90` - *Module containing the main functionality of the user subroutine to reproduce linear elastic behaviour*
 - `src/Abaqus_Definitions.f90` - *Module for determining the real precision used by Abaqus (Important for Abaqus/Explicit) and storing Abaqus constants*
 - `jobs/single-element.inp` *a single-element job file to test the umat*
+- `test/test_elastic.f90` *a unit test suite (run with abaci)*
 - `abaci.toml` - *configuration file for use with the Abaci test runner tool*
 
 
@@ -34,12 +35,19 @@ You will need Abaqus and the Intel Fortran compiler installed on your system to 
 2. Run the following command:
 
 ```shell
-abaqus job=single-element user=../src/umat.f interactive
+  abaqus job=single-element user=../src/umat.f interactive
 ```
 
 If you have the [Abaci](https://github.com/BristolCompositesInstitute/abaci) test runner installed,
 then simply navigate to the root of this repository and run the following command:
 
 ```shell
-abaci run
+  abaci run
 ```
+
+To run the Fortran test suite, run:
+
+```shell
+  abaci test
+```
+
