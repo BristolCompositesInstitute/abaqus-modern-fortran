@@ -13,18 +13,18 @@ subroutine umat(stress,statev,ddsdde,sse,spd,scd, &
   use Elastic_mod
   implicit none
 
-  real(dp), intent(inout) :: stress(ntens), statev(nstatv), ddsdde(ntens,ntens)
-  real(dp), intent(inout) :: sse, spd, scd, rpl, ddsddt(ntens), drplde(ntens)
-  real(dp), intent(inout) :: drpldt
-  real(dp), intent(in) :: stran(ntens), dstran(ntens), time(2), dtime, temp
-  real(dp), intent(in) :: dtemp, predef(1), dpred(1)
+  real(wp), intent(inout) :: stress(ntens), statev(nstatv), ddsdde(ntens,ntens)
+  real(wp), intent(inout) :: sse, spd, scd, rpl, ddsddt(ntens), drplde(ntens)
+  real(wp), intent(inout) :: drpldt
+  real(wp), intent(in) :: stran(ntens), dstran(ntens), time(2), dtime, temp
+  real(wp), intent(in) :: dtemp, predef(1), dpred(1)
   character(len=80), intent(in) :: cmname
   integer, intent(in) :: ndi, nshr, ntens, nstatv, nprops
-  real(dp), intent(in) :: props_array(nprops), coords(3), drot(3, 3), pnewdt
-  real(dp), intent(in) :: celent, dfgrd0(3,3), dfgrd1(3,3)
+  real(wp), intent(in) :: props_array(nprops), coords(3), drot(3, 3), pnewdt
+  real(wp), intent(in) :: celent, dfgrd0(3,3), dfgrd1(3,3)
   integer, intent(in) :: noel, npt, layer, kspt, jstep(4), kinc
 
-  
+
   if (cmname(1:12) == 'UMAT_ELASTIC') then
 
     call umat_elastic(ddsdde, stress, props_array, dstran, ndi, nshr)
@@ -39,5 +39,5 @@ subroutine umat(stress,statev,ddsdde,sse,spd,scd, &
     call xit()
 
   end if
-  
+
 end subroutine umat
